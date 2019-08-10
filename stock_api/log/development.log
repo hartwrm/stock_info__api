@@ -2186,3 +2186,73 @@ Completed 200 OK in 12ms (Views: 9.6ms | ActiveRecord: 1.7ms | Allocations: 2092
   [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
   [1m[36mCompany Load (0.7ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
   [1m[36mPrice Load (0.4ms)[0m  [1m[34mSELECT "prices".* FROM "prices" WHERE "prices"."company_id" = $1 LIMIT $2[0m  [["company_id", 10], ["LIMIT", 11]]
+Started GET "/companies/1" for ::1 at 2019-08-10 14:38:35 -0400
+Started GET "/companies" for ::1 at 2019-08-10 14:39:03 -0400
+Started GET "/companies" for ::1 at 2019-08-10 14:39:04 -0400
+Processing by CompaniesController#show as */*
+  Parameters: {"id"=>"1"}
+Processing by CompaniesController#show as */*
+Processing by UsersController#login as */*
+  Parameters: {"user"=>{"user_name"=>"Kyle", "password"=>"[FILTERED]"}}
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (1.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:44:in `set_company'
+  [1m[36mCompany Load (6.2ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."user_name" = $1 LIMIT $2[0m  [["user_name", "Kyle"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:8:in `login'
+  ↳ app/controllers/companies_controller.rb:44:in `set_company'
+Processing by CompaniesController#index as */*
+Completed 200 OK in 497ms (Views: 11.2ms | ActiveRecord: 32.4ms | Allocations: 12925)
+
+
+  [1m[36mCompany Load (2.1ms)[0m  [1m[34mSELECT "companies".* FROM "companies"[0m
+  ↳ app/controllers/companies_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 10.4ms | ActiveRecord: 2.1ms | Allocations: 2773)
+
+
+  [1m[36mPrice Load (3.6ms)[0m  [1m[34mSELECT "prices".* FROM "prices" WHERE "prices"."company_id" = $1[0m  [["company_id", 1]]
+  ↳ app/controllers/companies_controller.rb:13:in `show'
+  [1m[36mPrice Load (27.9ms)[0m  [1m[34mSELECT "prices".* FROM "prices" WHERE "prices"."company_id" = $1[0m  [["company_id", 1]]
+  ↳ app/controllers/companies_controller.rb:13:in `show'
+Completed 200 OK in 643ms (Views: 0.3ms | ActiveRecord: 6.2ms | Allocations: 31424)
+
+
+Completed 200 OK in 637ms (Views: 0.2ms | ActiveRecord: 39.3ms | Allocations: 34580)
+
+
+Started GET "/companies/2/prices" for ::1 at 2019-08-10 14:44:25 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/companies/2/prices"):
+  
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.0.rc2) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.0.rc2) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.0.rc2) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.0.rc2) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.0.rc2) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.0.rc2) lib/rails/rack/logger.rb:26:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.0.rc2) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.0.rc2) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+railties (6.0.0.rc2) lib/rails/engine.rb:526:in `call'
+puma (3.12.1) lib/puma/configuration.rb:227:in `call'
+puma (3.12.1) lib/puma/server.rb:660:in `handle_request'
+puma (3.12.1) lib/puma/server.rb:474:in `process_client'
+puma (3.12.1) lib/puma/server.rb:334:in `block in run'
+puma (3.12.1) lib/puma/thread_pool.rb:135:in `block in spawn_thread'
+Started GET "/companies/1" for ::1 at 2019-08-10 14:44:57 -0400
+Processing by CompaniesController#show as */*
+  Parameters: {"id"=>"1"}
+  [1m[36mCompany Load (12.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies" WHERE "companies"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/companies_controller.rb:44:in `set_company'
+  [1m[36mPrice Load (1.3ms)[0m  [1m[34mSELECT "prices".* FROM "prices" WHERE "prices"."company_id" = $1[0m  [["company_id", 1]]
+  ↳ app/controllers/companies_controller.rb:13:in `show'
+Completed 200 OK in 38ms (Views: 0.2ms | ActiveRecord: 14.1ms | Allocations: 5898)
+
+
