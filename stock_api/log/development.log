@@ -703,3 +703,36 @@ Migrating to CreatePrices (20190810163343)
   [1m[36mActiveRecord::InternalMetadata Load (2.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.6ms)[0m  [1m[34mSELECT pg_advisory_unlock(2585040186375428145)[0m
   [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Create (1.9ms)[0m  [1m[32mINSERT INTO "companies" ("name", "symbol", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Coty Inc"], ["symbol", "COTY"], ["created_at", "2019-08-10 16:51:21.950907"], ["updated_at", "2019-08-10 16:51:21.950907"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Create (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "symbol", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Xeros Corporation"], ["symbol", "XRX"], ["created_at", "2019-08-10 16:51:21.960520"], ["updated_at", "2019-08-10 16:51:21.960520"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Create (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "symbol", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Chipotle Mexican Grill"], ["symbol", "CMG"], ["created_at", "2019-08-10 16:51:21.966547"], ["updated_at", "2019-08-10 16:51:21.966547"]]
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Create (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "symbol", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Cadence Design Systems"], ["symbol", "CDNS"], ["created_at", "2019-08-10 16:51:21.972423"], ["updated_at", "2019-08-10 16:51:21.972423"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Create (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "symbol", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Anadarko Petroleum Corporation"], ["symbol", "APC"], ["created_at", "2019-08-10 16:51:21.976543"], ["updated_at", "2019-08-10 16:51:21.976543"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Create (0.7ms)[0m  [1m[32mINSERT INTO "companies" ("name", "symbol", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Total System Services"], ["symbol", "TSS"], ["created_at", "2019-08-10 16:51:21.981041"], ["updated_at", "2019-08-10 16:51:21.981041"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Create (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "symbol", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Dentsply Sirona Inc"], ["symbol", "XRAY"], ["created_at", "2019-08-10 16:51:21.985963"], ["updated_at", "2019-08-10 16:51:21.985963"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Create (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "symbol", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Advanced Micro Devices"], ["symbol", "AMD"], ["created_at", "2019-08-10 16:51:21.990711"], ["updated_at", "2019-08-10 16:51:21.990711"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Create (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "symbol", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "MSCI"], ["symbol", "MSCI"], ["created_at", "2019-08-10 16:51:21.994799"], ["updated_at", "2019-08-10 16:51:21.994799"]]
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mCompany Create (0.3ms)[0m  [1m[32mINSERT INTO "companies" ("name", "symbol", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "DISH Network Corporation"], ["symbol", "DISH"], ["created_at", "2019-08-10 16:51:21.999335"], ["updated_at", "2019-08-10 16:51:21.999335"]]
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from <top (required)> at /Users/hartwrm/Documents/Projects/stock_info/stock_info__api/stock_api/app/controllers/application_controller.rb:1)
+  [1m[36mCompany Load (0.3ms)[0m  [1m[34mSELECT "companies".* FROM "companies" LIMIT $1[0m  [["LIMIT", 11]]
