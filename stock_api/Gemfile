@@ -15,11 +15,13 @@ gem 'puma', '~> 3.11'
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password
 gem 'bcrypt', '~> 3.1.7'
-#IEX Finance API
-gem 'iex-ruby-client'
 
 #JWT
 gem 'jwt'
+
+#rails console make pretty
+gem 'awesome_print'
+gem 'rb-readline'
 
 #Generate and decode
 gem 'dotenv-rails'
