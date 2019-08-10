@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_08_10_165422) do
+ActiveRecord::Schema.define(version: 2019_08_10_193808) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,6 +20,15 @@ ActiveRecord::Schema.define(version: 2019_08_10_165422) do
     t.string "symbol"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "ledgers", force: :cascade do |t|
+    t.bigint "company_id", null: false
+    t.bigint "user_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["company_id"], name: "index_ledgers_on_company_id"
+    t.index ["user_id"], name: "index_ledgers_on_user_id"
   end
 
   create_table "prices", force: :cascade do |t|
@@ -37,4 +46,6 @@ ActiveRecord::Schema.define(version: 2019_08_10_165422) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  add_foreign_key "ledgers", "companies"
+  add_foreign_key "ledgers", "users"
 end

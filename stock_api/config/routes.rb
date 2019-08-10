@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :ledgers
   resources :prices
   resources :companies
   resources :users do
