@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   resources :ledgers
-  resources :prices
-  resources :companies
+  resources :prices, only: [:index]
+  resources :companies do
+    resources :prices, only: [:create]
+  end
   resources :users do
     collection do
       post '/login', to: 'users#login'
