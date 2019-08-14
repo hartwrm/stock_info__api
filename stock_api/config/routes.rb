@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'welcome#index'
   resources :ledgers
   resources :prices, only: [:index]
   resources :companies do

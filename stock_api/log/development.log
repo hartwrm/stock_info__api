@@ -7169,3 +7169,133 @@ Processing by UsersController#show as */*
 Completed 200 OK in 59ms (Views: 0.2ms | ActiveRecord: 20.8ms | Allocations: 7999)
 
 
+Started GET "/users/2" for ::1 at 2019-08-13 20:00:30 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `set_user'
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+  [1m[36mCompany Load (1.5ms)[0m  [1m[34mSELECT "companies".* FROM "companies" INNER JOIN "ledgers" ON "companies"."id" = "ledgers"."company_id" WHERE "ledgers"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:27:in `show'
+Completed 200 OK in 135ms (Views: 0.2ms | ActiveRecord: 24.0ms | Allocations: 15213)
+
+
+Started GET "/users/2" for ::1 at 2019-08-13 20:00:50 -0400
+  
+SyntaxError (/Users/hartwrm/Documents/Projects/stock_info/stock_info__api/stock_api/app/controllers/users_controller.rb:27: syntax error, unexpected ')', expecting =>
+...n(include: :companies, :prices)
+...                              ^
+/Users/hartwrm/Documents/Projects/stock_info/stock_info__api/stock_api/app/controllers/users_controller.rb:87: syntax error, unexpected end-of-input, expecting keyword_end):
+  
+app/controllers/users_controller.rb:27: syntax error, unexpected ')', expecting =>
+app/controllers/users_controller.rb:87: syntax error, unexpected end-of-input, expecting keyword_end
+app/controllers/users_controller.rb:27: syntax error, unexpected ')', expecting =>
+app/controllers/users_controller.rb:87: syntax error, unexpected end-of-input, expecting keyword_end
+Started GET "/users/2" for ::1 at 2019-08-13 20:01:43 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:58:in `set_user'
+  [1m[36mUser Load (7.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/application_controller.rb:22:in `get_current_user'
+  [1m[36mCompany Load (1.7ms)[0m  [1m[34mSELECT "companies".* FROM "companies" INNER JOIN "ledgers" ON "companies"."id" = "ledgers"."company_id" WHERE "ledgers"."user_id" = $1[0m  [["user_id", 2]]
+  ↳ app/controllers/users_controller.rb:27:in `show'
+Completed 200 OK in 134ms (Views: 0.1ms | ActiveRecord: 30.9ms | Allocations: 15173)
+
+
+Started POST "/ledgers" for ::1 at 2019-08-13 20:29:01 -0400
+Processing by LedgersController#create as */*
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 159)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: ledger):
+  
+app/controllers/ledgers_controller.rb:49:in `ledger_params'
+app/controllers/ledgers_controller.rb:18:in `create'
+Started POST "/ledgers?company[id]=5&user[id]=2" for ::1 at 2019-08-13 20:29:56 -0400
+Processing by LedgersController#create as */*
+  Parameters: {"company"=>{"id"=>"5"}, "user"=>{"id"=>"2"}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 138)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: ledger):
+  
+app/controllers/ledgers_controller.rb:49:in `ledger_params'
+app/controllers/ledgers_controller.rb:18:in `create'
+Started POST "/ledgers?company[company_id]=5&user[user_id]=2" for ::1 at 2019-08-13 20:30:33 -0400
+Processing by LedgersController#create as */*
+  Parameters: {"company"=>{"company_id"=>"5"}, "user"=>{"user_id"=>"2"}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 138)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: ledger):
+  
+app/controllers/ledgers_controller.rb:49:in `ledger_params'
+app/controllers/ledgers_controller.rb:18:in `create'
+Started POST "/ledgers?company_id=5&user_id=2" for ::1 at 2019-08-13 20:30:56 -0400
+Processing by LedgersController#create as */*
+  Parameters: {"company_id"=>"5", "user_id"=>"2"}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 130)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: ledger):
+  
+app/controllers/ledgers_controller.rb:49:in `ledger_params'
+app/controllers/ledgers_controller.rb:18:in `create'
+Started POST "/ledgers?companies[company_id]=5&users[user_id]=2" for ::1 at 2019-08-13 20:31:13 -0400
+Processing by LedgersController#create as */*
+  Parameters: {"companies"=>{"company_id"=>"5"}, "users"=>{"user_id"=>"2"}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 138)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: ledger):
+  
+app/controllers/ledgers_controller.rb:49:in `ledger_params'
+app/controllers/ledgers_controller.rb:18:in `create'
+Started POST "/ledgers?companies[company_id]=5&users[user_id]=2&ledger[id]=2" for ::1 at 2019-08-13 20:31:44 -0400
+Processing by LedgersController#create as */*
+  Parameters: {"companies"=>{"company_id"=>"5"}, "users"=>{"user_id"=>"2"}, "ledger"=>{"id"=>"2"}}
+[31mUnpermitted parameter: :id[0m
+Completed 422 Unprocessable Entity in 4831ms (Views: 0.3ms | ActiveRecord: 3.8ms | Allocations: 773466)
+
+
+Started POST "/ledgers?company[company_id]=5&user[user_id]=2&ledger[id]=2" for ::1 at 2019-08-13 20:32:02 -0400
+Processing by LedgersController#create as */*
+  Parameters: {"company"=>{"company_id"=>"5"}, "user"=>{"user_id"=>"2"}, "ledger"=>{"id"=>"2"}}
+[31mUnpermitted parameter: :id[0m
+Completed 422 Unprocessable Entity in 4ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 995)
+
+
+Started POST "/ledgers?company[company_id]=5&user[user_id]=2&=2" for ::1 at 2019-08-13 20:32:07 -0400
+Processing by LedgersController#create as */*
+  Parameters: {"company"=>{"company_id"=>"5"}, "user"=>{"user_id"=>"2"}}
+Completed 400 Bad Request in 0ms (ActiveRecord: 0.0ms | Allocations: 138)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: ledger):
+  
+app/controllers/ledgers_controller.rb:49:in `ledger_params'
+app/controllers/ledgers_controller.rb:18:in `create'
+Started POST "/ledgers?company[company_id]=5&user[user_id]=2&=" for ::1 at 2019-08-13 20:35:16 -0400
+Processing by LedgersController#create as */*
+  Parameters: {"company"=>{"company_id"=>"5"}, "user"=>{"user_id"=>"2"}}
+Completed 400 Bad Request in 1ms (ActiveRecord: 0.0ms | Allocations: 138)
+
+
+  
+ActionController::ParameterMissing (param is missing or the value is empty: ledger):
+  
+app/controllers/ledgers_controller.rb:49:in `ledger_params'
+app/controllers/ledgers_controller.rb:18:in `create'
+DEPRECATION WARNING: warning: white_list_sanitizer isdeprecated, please use safe_list_sanitizer instead. (called from <top (required)> at /Users/hartwrm/Documents/Projects/stock_info/stock_info__api/stock_api/app/controllers/application_controller.rb:1)
